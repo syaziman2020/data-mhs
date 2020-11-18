@@ -1,10 +1,10 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('content')
-    <div class="row mt-3 mb-3">
-        <div class="col-lg-12 margin-tb">
+    <div class="row">
+        <div class="col-lg-12 margin-tb mb-2">
             <div class="float-left">
-                <h2>Edit Data Mahasiswa</h2>
+                <h1><strong>Edit Data Mahasiswa</strong></h1>
             </div>
         </div>
     </div>
@@ -21,10 +21,14 @@
     <form action="{{ route('mhs.update', $mhs->id) }}" class="form-group" method="post">
         @csrf
         @method('PUT')
-        <input type="text" class="form-control col-3 mb-3" name="npm" id="" value="{{ $mhs->npm }}" placeholder="NPM">
-        <input type="text" class="form-control col-3 mb-3" name="nama" id="" value="{{ $mhs->nama }}" placeholder="Nama">
-        <input type="text" class="form-control col-3 mb-3" name="jurusan" id="" value="{{ $mhs->jurusan }}" placeholder="Jurusan">
-        <input type="text" class="form-control col-3 mb-3" name="alamat" id="" value="{{ $mhs->alamat }}" placeholder="Alamat">
+        <label for="">NPM :</label>
+        <input type="text" class="form-control mb-3" name="npm" id="" value="{{ $mhs->npm }}">
+        <label for="">Nama :</label>
+        <input type="text" class="form-control mb-3" name="nama" id="" value="{{ $mhs->nama }}">
+        <label for="">Jurusan :</label>
+        <input type="text" class="form-control mb-3" name="jurusan" id="" value="{{ $mhs->jurusan }}">
+        <label for="">Alamat :</label>
+        <textarea class="form-control mb-3" name="alamat" id="" rows="3">{{ $mhs->alamat }}</textarea>
         <button class="btn btn-primary" type="submit">Update</button>
     </form>
 @endsection

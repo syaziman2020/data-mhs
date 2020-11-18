@@ -1,12 +1,12 @@
-@extends('master')
+@extends('layouts.master')
 @section('content')
-    <div class="row mt-3 mb-3">
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
                 <h1>Data Mahasiswa</h1>
             </div>
         </div>
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12 margin-tb mb-3">
             <div class="float-right">
                 <a href="{{ route('mhs.create') }}" class="btn btn-primary">Add Data</a>
             </div>
@@ -17,15 +17,15 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <table class="table table-bordered" cellpadding=3>
+    <table class="table table-bordered mb-3" cellpadding=3>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>NPM</th>
-                <th>Nama</th>
-                <th>Jurusan</th>
+                <th col width="50">ID</th>
+                <th col width="120">NPM</th>
+                <th col width="220">Nama</th>
+                <th col width="220">Jurusan</th>
                 <th>Alamat</th>
-                <th col width="200">Aksi</th>
+                <th col width="155">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -50,4 +50,7 @@
             @endforeach
         </tbody>
     </table>
+    <div>
+        {{ $mhs->links() }}
+    </div>
 @endsection

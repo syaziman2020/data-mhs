@@ -14,8 +14,8 @@ class MhsController extends Controller
      */
     public function index()
     {
-        $mhs = Mhs::all();
-
+        // $mhs = Mhs::all();
+        $mhs = Mhs::latest()->paginate(5);
         return view('mhs.index', compact('mhs'));
     }
 

@@ -1,10 +1,10 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('content')
-    <div class="row mt-3 mb-3">
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Add Data Mahasiswa</h2>
+                <h1><strong>Add Data Mahasiswa</strong></h1>
             </div>
         </div>
     </div>
@@ -20,10 +20,10 @@
     @endif
     <form action="{{ route('mhs.store') }}" class="form-group" method="post">
         @csrf
-        <input type="text" class="form-control col-3 mb-3" name="npm" id="" placeholder="NPM">
-        <input type="text" class="form-control col-3 mb-3" name="nama" id="" placeholder="Nama">
-        <input type="text" class="form-control col-3 mb-3" name="jurusan" id="" placeholder="Jurusan">
-        <input type="text" class="form-control col-3 mb-3" name="alamat" id="" placeholder="Alamat">
+        <input type="text" class="form-control mb-3" name="npm" id="" placeholder="NPM">
+        <input type="text" class="form-control mb-3" name="nama" id="" placeholder="Nama">
+        <input type="text" class="form-control mb-3" name="jurusan" id="" placeholder="Jurusan">
+        <input type="text" class="form-control mb-3" name="alamat" id="" placeholder="Alamat">
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 @endsection
