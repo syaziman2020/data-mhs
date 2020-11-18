@@ -12,8 +12,8 @@
         <div class="alert alert-danger">
             <strong>Whoops!</strong> terjadi kesalahan!
             <ul>
-                @foreach ($error->all() as $error)
-                    <li>{{ $errorr }}</li>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>

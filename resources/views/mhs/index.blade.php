@@ -37,8 +37,14 @@
                 <td>{{ $mahasiswa->jurusan }}</td>
                 <td>{{ $mahasiswa->alamat }}</td>
                 <td>
-                    <a href="#" class="btn btn-success" role="button">Edit</a>
-                    <a href="#" class="btn btn-danger" role="button" onclick="return confirm('Yakin akan menghapus {{ $mahasiswa->nama }}')">Delete</a>
+                    <form action="{{ route('mhs.destroy', $mahasiswa->id) }}" method="post">
+                        {{-- <a href="{{ route('mhs.show', $mahasiswa->id) }}" class="btn btn-info">Show</a> --}}
+                        <a href="{{ route('mhs.edit', $mahasiswa->id) }}" class="btn btn-success" role="button">Edit</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus {{ $mahasiswa->nama }}')">Delete</button>
+                    </form>
+                    
                 </td>
             </tr>
             @endforeach

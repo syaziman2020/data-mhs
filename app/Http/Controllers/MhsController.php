@@ -37,6 +37,13 @@ class MhsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'npm' => 'required',
+            'nama' => 'required',
+            'jurusan' => 'required',
+            'alamat' => 'required',
+        ]);
+
         Mhs::create($request->all());
         return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah dibuat!');
     }
@@ -60,7 +67,8 @@ class MhsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mhs = Mhs::find($id);
+        return view('mhs.edit', compact('mhs'));
     }
 
     /**
@@ -72,7 +80,16 @@ class MhsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'npm' => 'required',
+            'nama' => 'required',
+            'jurusan' => 'required',
+            'alamat' => 'required',
+        ]);
+        
+        $mhs = Mhs::find($id);
+        $mhs->update($request->all());
+        return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah diupdate!');
     }
 
     /**
@@ -83,6 +100,8 @@ class MhsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mhs = Mhs::find($id);
+        $mhs->delete();
+        return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah diupdate!');
     }
 }
