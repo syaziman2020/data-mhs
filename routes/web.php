@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::resource('mhs', MhsController::class);
+Auth::routes();
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::view('/', 'pages.auth.login');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/mhs', MhsController::class);
+});
