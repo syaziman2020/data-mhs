@@ -11,6 +11,7 @@
 
 CRUD Data Mahasiswa with AdminLTE3
 - Database : Mariadb / MySQL (data_mhs)
+- Can import excel (.xlsx) with example data 'data-mhs.xlsx'
 
 ## License
 
