@@ -18,7 +18,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('mhs.store') }}" class="form-group" method="post">
+    <form action="{{ route('store') }}" class="form-group" method="post">
         @csrf
         <input type="text" class="form-control mb-3" name="npm" id="" placeholder="NPM">
         <input type="text" class="form-control mb-3" name="nama" id="" placeholder="Nama">

@@ -21,7 +21,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::view('/', 'pages.auth.login');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('/mhs', MhsController::class);
+    Route::get('/', [MhsController::class, 'index'])->name('index');
+
+    Route::get('/mhs/create', [MhsController::class, 'create'])->name('create');
+    Route::post('/mhs/store', [MhsController::class, 'store'])->name('store');
+    Route::get('/mhs/{id}/edit', [MhsController::class, 'edit'])->name('edit');
+    Route::post('/mhs/{id}/update', [MhsController::class, 'update'])->name('update');
+    Route::get('/mhs/{id}/destroy', [MhsController::class, 'destroy'])->name('destroy');
+    
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::resource('/mhs', MhsController::class);
 });

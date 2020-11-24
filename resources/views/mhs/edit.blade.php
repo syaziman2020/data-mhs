@@ -18,9 +18,8 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('mhs.update', $mhs->id) }}" class="form-group" method="post">
+    <form action="{{ route('update', $mhs->id) }}" class="form-group" method="post">
         @csrf
-        @method('PUT')
         <label for="">NPM :</label>
         <input type="text" class="form-control mb-3" name="npm" id="" value="{{ $mhs->npm }}">
         <label for="">Nama :</label>

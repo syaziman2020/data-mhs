@@ -45,7 +45,7 @@ class MhsController extends Controller
         ]);
 
         Mhs::create($request->all());
-        return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah dibuat!');
+        return redirect()->route('index')->with('success', 'Data mahasiswa telah dibuat!');
     }
 
     /**
@@ -89,7 +89,7 @@ class MhsController extends Controller
         
         $mhs = Mhs::find($id);
         $mhs->update($request->all());
-        return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah diupdate!');
+        return redirect()->route('index')->with('success', 'Data mahasiswa telah diupdate!');
     }
 
     /**
@@ -102,6 +102,6 @@ class MhsController extends Controller
     {
         $mhs = Mhs::find($id);
         $mhs->delete();
-        return redirect()->route('mhs.index')->with('success', 'Data mahasiswa telah diupdate!');
+        return redirect()->route('index')->with('success', 'Data mahasiswa telah diupdate!');
     }
 }
