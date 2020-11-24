@@ -3,10 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mhs;
+use App\Exports\MhsExport;
+use App\Imports\MhsImport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class MhsController extends Controller
 {
+    public function mhsexport()
+    {
+        return Excel::download(new MhsExport, 'data-mhs.xlsx');
+    }
+
+    public function mhsimport(Request $request)
+    {
+        $file = $request->file('file');
+        $filename = $file->getClientOriginalName();
+        $file->move('DataMhs', $filename);
+        
+        Excel::import(new MhsImport, public_path('/DataMhs/'.$filename));
+        return redirect()->route('index')->with('success', 'Data mahasiswa telah diimport!');
+    }
     /**
      * Display a listing of the resource.
      *

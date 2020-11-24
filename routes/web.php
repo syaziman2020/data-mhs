@@ -28,6 +28,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/mhs/{id}/edit', [MhsController::class, 'edit'])->name('edit');
     Route::post('/mhs/{id}/update', [MhsController::class, 'update'])->name('update');
     Route::get('/mhs/{id}/destroy', [MhsController::class, 'destroy'])->name('destroy');
+
+    Route::get('/exportmhs', [MhsController::class, 'mhsexport'])->name('mhsexport');
+    Route::post('/importmhs', [MhsController::class, 'mhsimport'])->name('mhsimport');
     
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     // Route::resource('/mhs', MhsController::class);
