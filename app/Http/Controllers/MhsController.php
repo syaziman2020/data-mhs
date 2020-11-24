@@ -19,9 +19,9 @@ class MhsController extends Controller
     {
         $file = $request->file('file');
         $filename = $file->getClientOriginalName();
-        $file->move('DataMhs', $filename);
+        $file->move('datamhs', $filename);
         
-        Excel::import(new MhsImport, public_path('/DataMhs/'.$filename));
+        Excel::import(new MhsImport, public_path('/datamhs/'.$filename));
         return redirect()->route('index')->with('success', 'Data mahasiswa telah diimport!');
     }
     /**
