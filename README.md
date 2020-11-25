@@ -10,6 +10,13 @@
 ## About Laravel
 
 CRUD Data Mahasiswa with AdminLTE3
+
+*First step:
+- composer install
+- rename .env.example to .env (and configure it)
+- php artisan key:generate
+
+*Note
 - Database : Mariadb / MySQL (data_mhs)
 - Can import excel (.xlsx) with example data 'data-mhs.xlsx'
 
