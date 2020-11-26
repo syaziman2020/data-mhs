@@ -41,6 +41,12 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
+                                <div class="g-recaptcha" data-sitekey="6Ldsve0ZAAAAACc8D4FvKMylx9puCOfNy3_VFFLW"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 

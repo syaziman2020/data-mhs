@@ -36,18 +36,12 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header">DATA MAHASISWA</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('index') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Mahasiswa</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>Mata Kuliah</p>
-            </a>
-          </li>
-          {{-- <li class="nav-item">
               <a href="{{ route('logout') }}" class="nav-link" onclick="
               event.preventDefault();
               document.getElementById('formLogout').submit();
@@ -56,7 +50,7 @@
                 <p>Logout</p>
               </a>
               <form id="formLogout" action="{{ route('logout') }}" method="POST">@csrf</form>
-          </li> --}}
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

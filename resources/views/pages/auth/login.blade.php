@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+  <!-- reCaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -61,6 +63,9 @@
             </div>
           </div>
           <!-- /.col -->
+          <div class="form-group col-12">
+            <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6Ldsve0ZAAAAACc8D4FvKMylx9puCOfNy3_VFFLW"></div>
+          </div>
           <div class="col-12 mb-3">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
