@@ -12,6 +12,7 @@
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#importModal">Import</a>
             </div>
             <div class="float-right">
+                <a href="{{ route('print_pdf') }}" target="_blank" class="btn btn-danger">Print</a>
                 <a href="{{ route('create') }}" class="btn btn-primary">Add Data</a>
             </div>
         </div>

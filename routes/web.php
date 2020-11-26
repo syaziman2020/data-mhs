@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [MhsController::class, 'index'])->name('index');
+    Route::get('/mhs/print_pdf', [MhsController::class, 'print_pdf'])->name('print_pdf');
 
     Route::get('/mhs/create', [MhsController::class, 'create'])->name('create');
     Route::post('/mhs/store', [MhsController::class, 'store'])->name('store');

@@ -8,6 +8,8 @@ use App\Imports\MhsImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
+use Barryvdh\DomPDF\Facade as PDF;
+
 class MhsController extends Controller
 {
     public function mhsexport()
@@ -23,6 +25,15 @@ class MhsController extends Controller
         
         Excel::import(new MhsImport, public_path('/datamhs/'.$filename));
         return redirect()->route('index')->with('success', 'Data mahasiswa telah diimport!');
+    }
+
+    public function print_pdf()
+    {
+        $mhs = Mhs::all();
+        $pdf = PDF::loadview('mhs.print_pdf', ['mhs'=>$mhs]);
+        return $pdf->stream();
+
+
     }
     /**
      * Display a listing of the resource.
