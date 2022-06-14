@@ -20,7 +20,7 @@
     @endif
     <form action="{{ route('update', $mhs->id) }}" class="form-group" method="post">
         @csrf
-        <label for="">NPM :</label>
+        <label for="">NIM :</label>
         <input type="text" class="form-control mb-3" name="npm" id="" value="{{ $mhs->npm }}">
         <label for="">Nama :</label>
         <input type="text" class="form-control mb-3" name="nama" id="" value="{{ $mhs->nama }}">

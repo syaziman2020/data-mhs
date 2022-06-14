@@ -22,18 +22,16 @@ class MhsController extends Controller
         $file = $request->file('file');
         $filename = $file->getClientOriginalName();
         $file->move('datamhs', $filename);
-        
-        Excel::import(new MhsImport, public_path('/datamhs/'.$filename));
+
+        Excel::import(new MhsImport, public_path('/datamhs/' . $filename));
         return redirect()->route('index')->with('success', 'Data mahasiswa telah diimport!');
     }
 
     public function print_pdf()
     {
         $mhs = Mhs::all();
-        $pdf = PDF::loadview('mhs.print_pdf', ['mhs'=>$mhs]);
+        $pdf = PDF::loadview('mhs.print_pdf', ['mhs' => $mhs]);
         return $pdf->stream();
-
-
     }
     /**
      * Display a listing of the resource.
@@ -114,7 +112,7 @@ class MhsController extends Controller
             'jurusan' => 'required',
             'alamat' => 'required',
         ]);
-        
+
         $mhs = Mhs::find($id);
         $mhs->update($request->all());
         return redirect()->route('index')->with('success', 'Data mahasiswa telah diupdate!');

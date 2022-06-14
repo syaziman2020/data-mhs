@@ -1,5 +1,5 @@
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-<!-- Left navbar links -->
+    <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
@@ -11,28 +11,20 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        {{-- <form class="form-inline mr-2">
-            <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form> --}}
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="{{ asset('assets/dist/img/user2-160x160.jpg')}}" class="user-image img-circle elevation-2" alt="User Image">
+                <img src="{{ asset('assets/dist/img/avatar5.png') }}" class="user-image img-circle elevation-2"
+                    alt="User Image">
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <!-- User image -->
+                <!-- User image -->
                 <li class="user-header bg-primary">
-                    <img src="{{ asset('assets/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset('assets/dist/img/avatar5.png') }}" class="img-circle elevation-2"
+                        alt="User Image">
                     <p>
                         {{ Auth::user()->name }}
-                        <small>Universitas Siliwangi</small>
+                        <small>Universitas Tanjungpura</small>
                     </p>
                 </li>
                 <!-- Menu Footer-->

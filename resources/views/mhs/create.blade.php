@@ -20,7 +20,7 @@
     @endif
     <form action="{{ route('store') }}" class="form-group" method="post">
         @csrf
-        <input type="text" class="form-control mb-3" name="npm" id="" placeholder="NPM">
+        <input type="text" class="form-control mb-3" name="npm" id="" placeholder="NIM">
         <input type="text" class="form-control mb-3" name="nama" id="" placeholder="Nama">
         <input type="text" class="form-control mb-3" name="jurusan" id="" placeholder="Jurusan">
         <input type="text" class="form-control mb-3" name="alamat" id="" placeholder="Alamat">
